@@ -14,7 +14,7 @@ void setup()
   Serial.begin(115200);
 
   /* mulai koneksi WIFI begin(SSID,PASSWORD) */
-  WiFi.begin("PAK JU", "gilangfajar");
+  WiFi.begin(SSID, PASSWORD);
 
   /* tunggu hingga wifi terkoneksi */
   Serial.print("Menghubungkan ke Wi-Fi");
@@ -29,7 +29,7 @@ void setup()
   Serial.println();
 
   /* mulai koneksi dengan firebase begin(database URL ,database Secret */
-  Firebase.begin("belajar-8c049-default-rtdb.firebaseio.com/", "8zCu1t12nylWBmtKmafHfRbOJDcCAvaYAncxd0m1");
+  Firebase.begin(DATABASE_URL, DATABASE_SECRET);
 
   /* jika WIFI terputus , hubungkan kembali */
   Firebase.reconnectWiFi(true);
